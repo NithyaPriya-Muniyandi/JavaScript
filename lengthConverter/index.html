@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Length Converter</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>CM to Inches</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="length in CM">
+        </div>
+        <div>
+            <button type="submit" onclick="convert()">Convert to Inches</button>
+        </div>
+        <div id="result">
+
+        </div>
+        <div class="inputdiv">
+            <input type="text" id="inpu" placeholder="length in Celsius">
+        </div>
+        <div>
+            <button type="submit" onclick="cf()">Convert to Fahrenheit</button>
+        </div>
+        <div id="res">
+
+        </div>
+        <script>
+            function convert(){
+                const cmVal = Number(document.getElementById('input').value);
+               const inchVal = cmVal / 2.54;
+               const result = document.getElementById('result');
+                result.innerHTML=inchVal.toFixed(3)+' Inches';
+            }
+            function cf(){
+                 const celVal=Number(document.getElementById('inpu').value);
+                 const fahVal = (celVal*9/5)+32;
+                 const res = document.getElementById('res');
+                  res.innerHTML =fahVal+" Fahrenheit";
+            }
+        </script>
+    </div>
+</body>
+</html>
